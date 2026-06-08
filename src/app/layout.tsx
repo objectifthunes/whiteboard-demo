@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "@objectifthunes/whiteboard/style.css";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "@objectifthunes/whiteboard — Component Showcase",
-  description: "Live demo of the @objectifthunes/whiteboard React component library.",
+  title: "@objectifthunes/whiteboard — Component reference",
+  description: "Live documentation for the @objectifthunes/whiteboard React component library.",
 };
 
 export default function RootLayout({
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

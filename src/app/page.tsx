@@ -1,72 +1,44 @@
-'use client'
+import Link from 'next/link'
+import { CodeBlock } from '@/components/CodeBlock'
 
-import { useEffect, useMemo, useState } from 'react'
-import {
-  WhiteboardShell,
-  ThemeToggle,
-  useWhiteboardLayout,
-  WHITEBOARD_GRID,
-} from '@objectifthunes/whiteboard'
-import { GettingStartedPanel } from '@/panels/GettingStartedPanel'
-import { ButtonsPanel } from '@/panels/ButtonsPanel'
-import { FormsPanel } from '@/panels/FormsPanel'
-import { StatusPanel } from '@/panels/StatusPanel'
-import { LayoutPanel } from '@/panels/LayoutPanel'
-import { CardsPanel } from '@/panels/CardsPanel'
-import { TypographyPanel } from '@/panels/TypographyPanel'
-import { SkeletonPanel } from '@/panels/SkeletonPanel'
-import { OverlaysPanel } from '@/panels/OverlaysPanel'
-import { NavigationPanel } from '@/panels/NavigationPanel'
+const INSTALL = `pnpm add @objectifthunes/whiteboard zustand`
 
-const GAP = WHITEBOARD_GRID * 2
+const QUICK_START = `'use client'
 
-const WIDTHS = {
-  gettingStarted: 420, buttons: 360, forms: 380,
-  status: 360, layout: 360, typography: 360,
-  cards: 380, overlays: 360, navigation: 360, skeletons: 820,
-}
+import '@objectifthunes/whiteboard/style.css'
+import { WhiteboardShell, FloatingPanel } from '@objectifthunes/whiteboard'
 
-export default function Page() {
-  const [mounted, setMounted] = useState(false)
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme
-  }, [theme])
-
-  const layoutOptions = useMemo(
-    () => ({ widths: WIDTHS, startX: 40, y: 40, gap: GAP }),
-    [],
-  )
-  const { positions } = useWhiteboardLayout(layoutOptions)
-
-  if (!mounted) return <div className="demo-root" />
-
+export default function App() {
   return (
-    <div className="demo-root">
-      <WhiteboardShell
-        extraActions={
-          <ThemeToggle
-            theme={theme}
-            onToggle={() => setTheme(t => (t === 'light' ? 'dark' : 'light'))}
-          />
-        }
-      >
-        <GettingStartedPanel defaultPosition={positions.gettingStarted} />
-        <ButtonsPanel defaultPosition={positions.buttons} />
-        <FormsPanel defaultPosition={positions.forms} />
-        <StatusPanel defaultPosition={positions.status} />
-        <LayoutPanel defaultPosition={positions.layout} />
-        <TypographyPanel defaultPosition={positions.typography} />
-        <CardsPanel defaultPosition={positions.cards} />
-        <OverlaysPanel defaultPosition={positions.overlays} />
-        <NavigationPanel defaultPosition={positions.navigation} />
-        <SkeletonPanel defaultPosition={positions.skeletons} width={820} />
+    <div style={{ position: 'relative', height: '100vh' }}>
+      <WhiteboardShell>
+        <FloatingPanel title="Hello" defaultPosition={{ x: 100, y: 100 }} focusable>
+          Drag me · scroll to zoom · double-click to focus
+        </FloatingPanel>
       </WhiteboardShell>
+    </div>
+  )
+}`
+
+export default async function HomePage() {
+  return (
+    <div className="landing">
+      <div className="landing__inner">
+        <span className="landing__eyebrow">@objectifthunes/whiteboard</span>
+        <h1 className="landing__title">A pan/zoom canvas + 40+ themed primitives, in one package.</h1>
+        <p className="landing__lead">
+          Floating panels, minimap, snap-to-grid, zoom controls — and the buttons, forms, alerts and skeletons
+          you need to fill them. Tiny, themable, and built for studio-style UIs.
+        </p>
+
+        <div className="landing__actions">
+          <Link href="/components/canvas" className="wb-btn">Browse components</Link>
+          <a href="https://www.npmjs.com/package/@objectifthunes/whiteboard" target="_blank" rel="noopener noreferrer" className="wb-btn wb-btn--secondary">View on npm</a>
+        </div>
+
+        <CodeBlock code={INSTALL} lang="bash" />
+        <CodeBlock code={QUICK_START} lang="tsx" />
+      </div>
     </div>
   )
 }
