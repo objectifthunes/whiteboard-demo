@@ -2,30 +2,62 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { SECTIONS } from './nav'
+import { Brand } from './Brand'
+import { GROUPS, exportsByGroup } from './exports'
+
+const GROUP_ICONS: Record<string, string> = {
+  whiteboard: '◳',
+  store:      '⚙',
+  buttons:    '▣',
+  forms:      '▤',
+  feedback:   '◔',
+  layout:     '▦',
+  typography: 'A',
+  cards:      '☰',
+  navigation: '⇆',
+  media:      '◧',
+  sections:   '▭',
+  skeletons:  '░',
+}
 
 export function Sidebar() {
   const pathname = usePathname()
+
   return (
-    <nav className="docs-sidebar" aria-label="Documentation sections">
-      <Link href="/" className="docs-sidebar__brand">@objectifthunes/whiteboard</Link>
-      {SECTIONS.map(section => (
-        <div key={section.title} className="docs-sidebar__section">
-          <div className="docs-sidebar__heading">{section.title}</div>
-          <ul className="docs-sidebar__list">
-            {section.items.map(item => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`docs-sidebar__link${pathname === item.href ? ' is-active' : ''}`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </nav>
+    <aside className="sidebar" aria-label="Component navigation">
+      <div className="sidebar__brand">
+        <Brand />
+      </div>
+      <nav className="sidebar__nav">
+        {GROUPS.map(g => {
+          const items = exportsByGroup(g.id)
+          if (items.length === 0) return null
+          return (
+            <section key={g.id} className="sidebar__group">
+              <div className="sidebar__group-heading">
+                <span className="sidebar__group-icon" aria-hidden>{GROUP_ICONS[g.id]}</span>
+                {g.label}
+              </div>
+              <ul className="sidebar__list">
+                {items.map(item => {
+                  const active = pathname === item.href || pathname === item.href.replace(/\/$/, '')
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className={`sidebar__link${active ? ' is-active' : ''}`}
+                      >
+                        <span className="sidebar__link-name">{item.name}</span>
+                        {item.badge ? <span className={`sidebar__badge sidebar__badge--${item.badge.toLowerCase().replace('-', '')}`}>{item.badge}</span> : null}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </section>
+          )
+        })}
+      </nav>
+    </aside>
   )
 }

@@ -1,6 +1,31 @@
 import type { ReactNode } from 'react'
+import { Eyebrow } from './Eyebrow'
 
-/** Bordered surface that frames live component examples. */
-export function Preview({ children }: { children: ReactNode }) {
-  return <div className="docs-preview">{children}</div>
+/** A bordered surface that frames a live component example, with a "PREVIEW" eyebrow. */
+export function Preview({ children, padded = true }: { children: ReactNode; padded?: boolean }) {
+  return (
+    <div className="export-block">
+      <Eyebrow icon="◐">PREVIEW</Eyebrow>
+      <div className={`preview${padded ? '' : ' preview--bare'}`}>{children}</div>
+    </div>
+  )
+}
+
+/** A preview block for FULL-SCREEN exports — shows a still + a link to the live demo. */
+export function FullScreenPreview({
+  href,
+  illustration,
+}: {
+  href: string
+  illustration: ReactNode
+}) {
+  return (
+    <div className="export-block">
+      <Eyebrow icon="◐">PREVIEW</Eyebrow>
+      <div className="preview preview--fullscreen">
+        <div className="preview__illustration">{illustration}</div>
+        <a className="preview__open" href={href}>Open full-screen demo ↗</a>
+      </div>
+    </div>
+  )
 }
