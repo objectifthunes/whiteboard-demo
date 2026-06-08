@@ -12,12 +12,12 @@ export function Demo() {
     <pre style={{
       margin: 0,
       padding: '0.75rem 1rem',
-      background: 'var(--docs-surface-2)',
-      borderRadius: 8,
+      background: 'var(--wb-surface-muted)',
+      borderRadius: 'var(--wb-radius-sm)',
       fontSize: 12,
       lineHeight: 1.55,
       overflowX: 'auto',
-      color: 'var(--docs-text)',
+      color: 'var(--wb-text)',
     }}>{JSON.stringify({ positions, panelWidth, layout }, null, 2)}</pre>
   )
 }

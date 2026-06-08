@@ -4,21 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Brand } from './Brand'
 import { GROUPS, exportsByGroup } from './exports'
-
-const GROUP_ICONS: Record<string, string> = {
-  whiteboard: '◳',
-  store:      '⚙',
-  buttons:    '▣',
-  forms:      '▤',
-  feedback:   '◔',
-  layout:     '▦',
-  typography: 'A',
-  cards:      '☰',
-  navigation: '⇆',
-  media:      '◧',
-  sections:   '▭',
-  skeletons:  '░',
-}
+import { GroupIcon } from './groupIcons'
 
 export function Sidebar() {
   const pathname = usePathname()
@@ -35,7 +21,7 @@ export function Sidebar() {
           return (
             <section key={g.id} className="sidebar__group">
               <div className="sidebar__group-heading">
-                <span className="sidebar__group-icon" aria-hidden>{GROUP_ICONS[g.id]}</span>
+                <span className="sidebar__group-icon" aria-hidden><GroupIcon group={g.id} size={11} /></span>
                 {g.label}
               </div>
               <ul className="sidebar__list">

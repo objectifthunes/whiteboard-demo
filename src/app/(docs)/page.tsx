@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ArrowDownToLine, Code2, LayoutDashboard, Sparkles } from 'lucide-react'
 import { CodeBlock } from '@/components/CodeBlock'
 import { Eyebrow } from '@/components/Eyebrow'
 import { GROUPS, exportsByGroup, TOTAL_EXPORTS } from '@/components/exports'
@@ -30,7 +31,7 @@ export default async function HomePage() {
   return (
     <div className="landing">
       <section className="landing__hero">
-        <Eyebrow icon="◳">@OBJECTIFTHUNES/WHITEBOARD · DEMO</Eyebrow>
+        <Eyebrow icon={<LayoutDashboard size={12} strokeWidth={1.75} />}>@OBJECTIFTHUNES/WHITEBOARD · DEMO</Eyebrow>
         <h1 className="landing__title">Every export, in one place.</h1>
         <p className="landing__lede">
           A live, source-paired showcase of every component, hook and util shipped by{' '}
@@ -60,23 +61,23 @@ export default async function HomePage() {
       </section>
 
       <section className="landing__block">
-        <Eyebrow icon="↓">INSTALL</Eyebrow>
+        <Eyebrow icon={<ArrowDownToLine size={12} strokeWidth={1.75} />}>INSTALL</Eyebrow>
         <CodeBlock code={INSTALL} lang="bash" />
-        <Eyebrow icon="{ }">WIRE-UP</Eyebrow>
+        <Eyebrow icon={<Code2 size={12} strokeWidth={1.75} />}>WIRE-UP</Eyebrow>
         <CodeBlock code={WIRE_UP} lang="tsx" />
       </section>
 
       <section className="landing__skill">
         <div className="landing__skill-header">
           <div>
-            <Eyebrow icon="✦">PICK IT UP WITH CLAUDE</Eyebrow>
+            <Eyebrow icon={<Sparkles size={12} strokeWidth={1.75} />}>PICK IT UP WITH CLAUDE</Eyebrow>
             <h2 className="landing__skill-title">A skill, so Claude knows the rules.</h2>
           </div>
           <a className="landing__skill-cta" href="https://github.com/objectifthunes/whiteboard-claude-skill" target="_blank" rel="noopener noreferrer">
             Open repo
           </a>
         </div>
-        <p style={{ color: 'var(--docs-text-soft)', fontSize: 14 }}>
+        <p style={{ color: 'var(--wb-text-secondary)', fontSize: 14 }}>
           A companion Claude skill lives at <code>objectifthunes/whiteboard-claude-skill</code>. Drop it into
           your <code>~/.claude/skills/</code> directory and Claude Code (or Claude.ai with the skill) will
           surface the five-step wire-up, the full export catalogue ({TOTAL_EXPORTS} entries), the design
@@ -84,7 +85,7 @@ export default async function HomePage() {
           or any of its components.
         </p>
         <CodeBlock code={SKILL_INSTALL} lang="bash" />
-        <Eyebrow icon="✦">WHAT CLAUDE WILL DO, ONCE INSTALLED</Eyebrow>
+        <Eyebrow icon={<Sparkles size={12} strokeWidth={1.75} />}>WHAT CLAUDE WILL DO, ONCE INSTALLED</Eyebrow>
         <ul className="landing__skill-bullets">
           <li>Scaffold a new Next.js app pre-wired with @objectifthunes/whiteboard</li>
           <li>Pick the right export per intent (CardTitle vs PageTitle, Stack vs Inline)</li>

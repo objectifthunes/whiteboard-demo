@@ -7,7 +7,7 @@ export function Demo() {
     <EmptyState
       title="No items yet"
       description="Create your first item to see it here."
-      action={<Button>Create</Button>}
+      action={<div className="demo-row"><Button>Create</Button></div>}
     />
   )
 }

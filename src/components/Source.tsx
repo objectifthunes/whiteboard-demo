@@ -1,3 +1,4 @@
+import { Code2 } from 'lucide-react'
 import { CodeBlock } from './CodeBlock'
 import { Eyebrow } from './Eyebrow'
 
@@ -10,7 +11,7 @@ interface SourceProps {
 export async function Source({ code, lang = 'tsx' }: SourceProps) {
   return (
     <div className="export-block">
-      <Eyebrow icon="{ }">SOURCE</Eyebrow>
+      <Eyebrow icon={<Code2 size={12} strokeWidth={1.75} />}>SOURCE</Eyebrow>
       <CodeBlock code={code} lang={lang} />
     </div>
   )
