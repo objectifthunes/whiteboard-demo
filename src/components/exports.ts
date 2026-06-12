@@ -54,6 +54,11 @@ export const EXPORTS: ExportEntry[] = [
   { slug: 'geometry',              name: 'Geometry helpers',    group: 'store', href: '/store/geometry/',              lede: 'computeWhiteboardFit + computeWhiteboardRectFocus — pure functions for camera framing.', badge: 'UTIL' },
   { slug: 'helpers',               name: 'Helpers',             group: 'store', href: '/store/helpers/',               lede: 'usePanelRect, belowPanel, snapToWhiteboardGrid, WHITEBOARD_GRID, and cn.', badge: 'UTIL' },
 
+  // Forms (0.4 additions live alongside the originals below)
+  { slug: 'checkbox',     name: 'Checkbox & Switch', group: 'forms', href: '/forms/checkbox/',     lede: 'Labeled boolean rows. The input pins its own size, so host globals can never stretch it across the row.' },
+  { slug: 'slider',       name: 'Slider',            group: 'forms', href: '/forms/slider/',       lede: 'Label left, live readout right, themed range underneath. onChange emits numbers, not strings.' },
+  { slug: 'number-field', name: 'NumberField',       group: 'forms', href: '/forms/number-field/', lede: 'Labeled numeric input that clamps to min/max and never emits NaN.' },
+
   // Buttons
   { slug: 'button',              name: 'Button',              group: 'buttons', href: '/buttons/button/',              lede: 'Three variants (primary, secondary, danger), a loading state, full-width + icon-only modifiers. Defaults to type="button".' },
   { slug: 'button-row',          name: 'ButtonRow',           group: 'buttons', href: '/buttons/button-row/',          lede: 'Equal-sized children via flex: 1 1 0 — drop-in for action footers.' },
@@ -72,6 +77,7 @@ export const EXPORTS: ExportEntry[] = [
 
   // Feedback
   { slug: 'alert',              name: 'Alert',              group: 'feedback', href: '/feedback/alert/',              lede: 'Four tones — error, info, success, muted. Use sparingly: inside panels and on form errors.' },
+  { slug: 'tooltip', name: 'Tooltip', group: 'feedback', href: '/feedback/tooltip/', lede: 'CSS-only tooltip — shows on hover and keyboard focus. No portal, no JS, no positioning library.' },
   { slug: 'pill',               name: 'Pill',               group: 'feedback', href: '/feedback/pill/',               lede: 'Soft status indicator with no border. Four tones: default, success, warning, danger.' },
   { slug: 'chip',               name: 'Chip',               group: 'feedback', href: '/feedback/chip/',               lede: 'Outlined tag, rendered as a span. Becomes interactive as <button class="chip">.' },
   { slug: 'tag-row',            name: 'TagRow',             group: 'feedback', href: '/feedback/tag-row/',            lede: 'Wrapping row of tiny items — chips, pills, mini metadata.' },
@@ -81,6 +87,8 @@ export const EXPORTS: ExportEntry[] = [
 
   // Layout
   { slug: 'stack',         name: 'Stack',        group: 'layout', href: '/layout/stack/',         lede: 'Vertical grid with consistent gap. Use Stack everywhere you\'d otherwise reach for margin-bottom.' },
+  { slug: 'surface', name: 'Surface', group: 'layout', href: '/layout/surface/', lede: 'The plain floating overlay container — selection menus, legends, log panes — for chrome that lives outside a WhiteboardShell.' },
+  { slug: 'divider', name: 'Divider', group: 'layout', href: '/layout/divider/', lede: 'Hairline separator. Horizontal in stacks, vertical inside toolbars and inline rows.' },
   { slug: 'inline',        name: 'Inline',       group: 'layout', href: '/layout/inline/',        lede: 'Horizontal row. justify="between" for split alignment; "end" to push trailing items.' },
   { slug: 'title-row',     name: 'TitleRow',     group: 'layout', href: '/layout/title-row/',     lede: 'A title-on-the-left, actions-on-the-right header row.' },
   { slug: 'split-layout',  name: 'SplitLayout',  group: 'layout', href: '/layout/split-layout/',  lede: 'Two- or three-column grid for media + content (+ actions) rows. Three shape-named variants.' },
@@ -94,6 +102,7 @@ export const EXPORTS: ExportEntry[] = [
   { slug: 'section-title',        name: 'SectionTitle',        group: 'typography', href: '/typography/section-title/',        lede: 'The heading inside a PanelSection. An inline element by default.' },
   { slug: 'section-description',  name: 'SectionDescription',  group: 'typography', href: '/typography/section-description/',  lede: 'The one-liner that sits under a SectionTitle.' },
   { slug: 'muted-text',           name: 'MutedText',           group: 'typography', href: '/typography/muted-text/',           lede: 'Muted body text in three sizes: xs, sm (default), md.' },
+  { slug: 'kbd', name: 'Kbd', group: 'typography', href: '/typography/kbd/', lede: 'Keyboard-key chip for shortcut hints: esc, del, shift-drag.' },
 
   // Cards & lists
   { slug: 'item-card',     name: 'ItemCard',     group: 'cards', href: '/cards/item-card/',     lede: 'A bordered card surface. Pair with ItemList for vertical lists.' },
@@ -106,6 +115,7 @@ export const EXPORTS: ExportEntry[] = [
 
   // Navigation
   { slug: 'vertical-toolbar', name: 'VerticalToolbar', group: 'navigation', href: '/navigation/vertical-toolbar/', lede: 'Fixed-position icon sidebar with an optional bottom slot. Left, right, or static placement.' },
+  { slug: 'toolbar',          name: 'Toolbar',          group: 'navigation', href: '/navigation/toolbar/',          lede: 'Horizontal sibling of VerticalToolbar — the app-chrome bar: title, chips, navigation, primary action, end slot.' },
   { slug: 'avatar-badge',     name: 'AvatarBadge',     group: 'navigation', href: '/navigation/avatar-badge/',     lede: 'A circular initials badge — small, with a muted background.' },
 
   // Media
