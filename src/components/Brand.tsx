@@ -17,7 +17,7 @@ export function Brand() {
       <span className="brand__text">
         <span className="brand__eyebrow">LIBRARY</span>
         <span className="brand__name">@objectifthunes/whiteboard</span>
-        <span className="brand__meta">v0.4.0 · {TOTAL_EXPORTS} exports</span>
+        <span className="brand__meta">v0.5.0 · {TOTAL_EXPORTS} exports</span>
       </span>
     </Link>
   )

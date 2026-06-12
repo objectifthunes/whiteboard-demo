@@ -89,6 +89,7 @@ export const EXPORTS: ExportEntry[] = [
   { slug: 'stack',         name: 'Stack',        group: 'layout', href: '/layout/stack/',         lede: 'Vertical grid with consistent gap. Use Stack everywhere you\'d otherwise reach for margin-bottom.' },
   { slug: 'surface', name: 'Surface', group: 'layout', href: '/layout/surface/', lede: 'The plain floating overlay container — selection menus, legends, log panes — for chrome that lives outside a WhiteboardShell.' },
   { slug: 'divider', name: 'Divider', group: 'layout', href: '/layout/divider/', lede: 'Hairline separator. Horizontal in stacks, vertical inside toolbars and inline rows.' },
+  { slug: 'draggable', name: 'Draggable & DraggableSurface', group: 'layout', href: '/layout/draggable/', lede: 'Screen-space dragging for overlay chrome — grid snap on release, per-id persistence, double-click or resetDraggables() to reset. No WhiteboardShell required.' },
   { slug: 'inline',        name: 'Inline',       group: 'layout', href: '/layout/inline/',        lede: 'Horizontal row. justify="between" for split alignment; "end" to push trailing items.' },
   { slug: 'title-row',     name: 'TitleRow',     group: 'layout', href: '/layout/title-row/',     lede: 'A title-on-the-left, actions-on-the-right header row.' },
   { slug: 'split-layout',  name: 'SplitLayout',  group: 'layout', href: '/layout/split-layout/',  lede: 'Two- or three-column grid for media + content (+ actions) rows. Three shape-named variants.' },
