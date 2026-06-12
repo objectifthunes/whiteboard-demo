@@ -13,7 +13,7 @@ const CODE = `import { Tooltip, Button } from '@objectifthunes/whiteboard'
   <Button variant="secondary" iconOnly>⤢</Button>
 </Tooltip>
 
-// placement="top" (default) or "bottom" `
+// placement="top" (default), "bottom", "left", or "right" (vertical toolbars)`
 
 export default async function Page() {
   return (
