@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@objectifthunes/whiteboard':
-        specifier: ^0.9.1
-        version: 0.9.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zustand@4.5.7(@types/react@19.2.17)(react@19.2.4))
+        specifier: ^0.10.0
+        version: 0.10.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zustand@4.5.7(@types/react@19.2.17)(react@19.2.4))
       lucide-react:
         specifier: ^1.17.0
         version: 1.17.0(react@19.2.4)
@@ -427,8 +427,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@objectifthunes/whiteboard@0.9.1':
-    resolution: {integrity: sha512-CNUjFLt3l6kj4ZlybF8DT08JK0T/6EDq1IwB0wdsYX5onq2RuG+Io5ptimfR5ljsMQ1akJGATymmzG03l8shwQ==}
+  '@objectifthunes/whiteboard@0.10.0':
+    resolution: {integrity: sha512-FWpwkSxZpPVHBubrZutCsKYsmCf6zXDD7JuUfKY3GHaFeqeqhFXhZTBdfLydKcurhipYGKjXIIDmbP2YuikrzQ==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
@@ -2482,7 +2482,7 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@objectifthunes/whiteboard@0.9.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zustand@4.5.7(@types/react@19.2.17)(react@19.2.4))':
+  '@objectifthunes/whiteboard@0.10.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zustand@4.5.7(@types/react@19.2.17)(react@19.2.4))':
     dependencies:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
