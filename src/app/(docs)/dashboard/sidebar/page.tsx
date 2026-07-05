@@ -1,5 +1,5 @@
 import { ExportPage } from '@/components/ExportPage'
-import { Preview } from '@/components/Preview'
+import { Preview, FullScreenPreview } from '@/components/Preview'
 import { Source } from '@/components/Source'
 import { Notes } from '@/components/Notes'
 import { findExport } from '@/components/exports'
@@ -26,6 +26,14 @@ const groups = [
 export default async function Page() {
   return (
     <ExportPage group={e.group} title={e.name} lede={e.lede}>
+      <FullScreenPreview
+        href="/full/dashboard/shell/"
+        illustration={
+          <span style={{ fontFamily: 'var(--docs-mono)', fontSize: 12, letterSpacing: '0.08em' }}>
+            GROUPED NAV · ACTIVE STATE · BADGES · LIVE IN THE FULL DEMO
+          </span>
+        }
+      />
       <Preview><Demo /></Preview>
       <Source code={CODE} />
       <Notes>
