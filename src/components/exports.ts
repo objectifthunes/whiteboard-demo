@@ -13,6 +13,7 @@ export interface ExportEntry {
 export type GroupId =
   | 'whiteboard'
   | 'store'
+  | 'dashboard'
   | 'buttons'
   | 'forms'
   | 'feedback'
@@ -25,8 +26,9 @@ export type GroupId =
   | 'skeletons'
 
 export const GROUPS: { id: GroupId; label: string }[] = [
-  { id: 'whiteboard',  label: 'Whiteboard'  },
+  { id: 'whiteboard',  label: 'Whiteboard SaaS' },
   { id: 'store',       label: 'Store & hooks' },
+  { id: 'dashboard',   label: 'Whiteboard Dashboard' },
   { id: 'buttons',     label: 'Buttons'     },
   { id: 'forms',       label: 'Forms'       },
   { id: 'feedback',    label: 'Feedback'    },
@@ -53,6 +55,25 @@ export const EXPORTS: ExportEntry[] = [
   { slug: 'use-whiteboard-layout', name: 'useWhiteboardLayout', group: 'store', href: '/store/use-whiteboard-layout/', lede: 'Given a widths map, returns grid-snapped { x, y } positions for the initial layout of a row of panels.', badge: 'HOOK' },
   { slug: 'geometry',              name: 'Geometry helpers',    group: 'store', href: '/store/geometry/',              lede: 'computeWhiteboardFit + computeWhiteboardRectFocus — pure functions for camera framing.', badge: 'UTIL' },
   { slug: 'helpers',               name: 'Helpers',             group: 'store', href: '/store/helpers/',               lede: 'usePanelRect, belowPanel, snapToWhiteboardGrid, WHITEBOARD_GRID, and cn.', badge: 'UTIL' },
+
+  // Whiteboard Dashboard
+  { slug: 'dashboard-shell',  name: 'DashboardShell',        group: 'dashboard', href: '/dashboard/dashboard-shell/',  lede: 'Sidebar column + main column with top bar and centred content. The classic admin layout; collapses to one column under 880px.', badge: 'FULL-SCREEN' },
+  { slug: 'sidebar',          name: 'Sidebar',               group: 'dashboard', href: '/dashboard/sidebar/',          lede: 'Grouped dashboard navigation with brand, badge, and footer slots. Framework-agnostic — swap the plain <a> via renderLink.' },
+  { slug: 'top-bar',          name: 'TopBar',                group: 'dashboard', href: '/dashboard/top-bar/',          lede: 'Sticky dashboard header: mono breadcrumb left, quiet TopBarLink actions right. Content scrolls under its blurred backdrop.' },
+  { slug: 'page',             name: 'Page & PageHeader',     group: 'dashboard', href: '/dashboard/page/',             lede: 'Page, PageHeader, PageBlock, and Eyebrow — the vertical rhythm of every dashboard page.' },
+  { slug: 'content-card',     name: 'ContentCard',           group: 'dashboard', href: '/dashboard/content-card/',     lede: 'Bordered surface card for dashboard content, optionally titled with an Eyebrow.' },
+  { slug: 'stat-card',        name: 'StatCard',              group: 'dashboard', href: '/dashboard/stat-card/',        lede: 'Stat/recap tile: eyebrow title with a status pill, a big value, muted context lines, optional footer actions.' },
+  { slug: 'form-grid',        name: 'FormGrid & FormActions', group: 'dashboard', href: '/dashboard/form-grid/',       lede: 'Two- or three-column field grid plus a right-aligned compact action row. Collapses to one column under 880px.' },
+  { slug: 'filter-tabs',      name: 'FilterTabs',            group: 'dashboard', href: '/dashboard/filter-tabs/',      lede: 'Compact filter tabs built from Buttons — the active option is primary, the rest secondary. No custom tab CSS.' },
+  { slug: 'toggle-chip',      name: 'ToggleChip',            group: 'dashboard', href: '/dashboard/toggle-chip/',      lede: 'A Chip that toggles, with an unmissable filled active state and aria-pressed wired in.' },
+  { slug: 'icon-button',      name: 'IconButton',            group: 'dashboard', href: '/dashboard/icon-button/',      lede: 'Icon-only Button wrapped in a Tooltip that carries the label. For dense row actions where repeated text is noise.' },
+  { slug: 'row-card',         name: 'RowCard & skeletons',   group: 'dashboard', href: '/dashboard/row-card/',         lede: 'The one list-row layout every catalog page shares — plus RowSkeleton and ListSkeleton with the exact same geometry.' },
+  { slug: 'list-header-row',  name: 'ListHeaderRow',         group: 'dashboard', href: '/dashboard/list-header-row/',  lede: 'Header row above a list: eyebrow title left, actions right.' },
+  { slug: 'search-bar',       name: 'SearchBar',             group: 'dashboard', href: '/dashboard/search-bar/',       lede: 'Catalog search input, always full width of its container. Filters go on their own line below, never inline.' },
+  { slug: 'load-more-button', name: 'LoadMoreButton',        group: 'dashboard', href: '/dashboard/load-more-button/', lede: 'Cursor-pagination footer. Renders nothing without a next page or while loading, so drop it in unconditionally.' },
+  { slug: 'button-link',      name: 'ButtonLink',            group: 'dashboard', href: '/dashboard/button-link/',      lede: 'A link styled exactly like Button — navigation that looks like an action, without nesting a button inside an anchor.' },
+  { slug: 'note-bar',         name: 'NoteBar',               group: 'dashboard', href: '/dashboard/note-bar/',         lede: 'The single global notification surface: an Alert with a dismiss button. Renders nothing without children.' },
+  { slug: 'sticky-bar',       name: 'StickyBar',             group: 'dashboard', href: '/dashboard/sticky-bar/',       lede: 'Viewport-pinned bottom bar for batch summaries and bulk actions. Offsets past the sidebar; full width under 880px.', badge: 'FULL-SCREEN' },
 
   // Forms (0.4 additions live alongside the originals below)
   { slug: 'checkbox',     name: 'Checkbox & Switch', group: 'forms', href: '/forms/checkbox/',     lede: 'Labeled boolean rows. The input pins its own size, so host globals can never stretch it across the row.' },

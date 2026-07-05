@@ -10,6 +10,7 @@ import {
   ListTree,
   MessageSquare,
   MousePointerClick,
+  PanelsTopLeft,
   Square,
   SquareDashed,
   type LucideIcon,
@@ -19,6 +20,7 @@ import type { GroupId } from './exports'
 export const GROUP_ICONS: Record<GroupId, LucideIcon> = {
   whiteboard:  LayoutDashboard,
   store:       Database,
+  dashboard:   PanelsTopLeft,
   buttons:     MousePointerClick,
   forms:       Square,
   feedback:    MessageSquare,
