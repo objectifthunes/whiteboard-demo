@@ -15,12 +15,17 @@ import {
 export default function Page() {
   const [mounted, setMounted] = useState(false)
   const [count, setCount] = useState(5)
+  const [loading, setLoading] = useState(true)
   useEffect(() => { setMounted(true) }, [])
+  useEffect(() => {
+    const t = setTimeout(() => setLoading(false), 2000)
+    return () => clearTimeout(t)
+  }, [])
   if (!mounted) return null
 
   return (
     <WhiteboardShell>
-      <SectionPanel title="Videos" defaultPosition={{ x: 0, y: 0 }} cols={3} cardW={220}>
+      <SectionPanel title="Videos" defaultPosition={{ x: 0, y: 0 }} cols={3} cardW={220} loading={loading} loadingCards={5}>
         {Array.from({ length: count }, (_, i) => (
           <ItemCard key={i}>
             <Stack size="sm">

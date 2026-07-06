@@ -22,6 +22,9 @@ const PROPS = `interface SectionPanelProps {
   cardW: number            // keep it a multiple of WHITEBOARD_GRID (20)
   headerActions?: ReactNode
   className?: string
+  loading?: boolean        // skeleton cards under a blurred overlay
+  loadingCards?: number    // default: one row (cols)
+  loadingMessage?: string  // default 'Loading…'
 }
 
 sectionPanelWidth(cols, cardW)
