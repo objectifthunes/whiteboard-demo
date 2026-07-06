@@ -1,5 +1,6 @@
 import { ExportPage } from '@/components/ExportPage'
-import { FullScreenPreview } from '@/components/Preview'
+import { Preview } from '@/components/Preview'
+import { Demo } from './client'
 import { Source } from '@/components/Source'
 import { Notes } from '@/components/Notes'
 import { findExport } from '@/components/exports'
@@ -33,14 +34,9 @@ const PROPS = `interface Props {
 export default async function Page() {
   return (
     <ExportPage group={e.group} title={e.name} lede={e.lede}>
-      <FullScreenPreview
-        href="/full/whiteboard/floating-panel/"
-        illustration={
-          <span style={{ fontFamily: 'var(--docs-mono)', fontSize: 12, letterSpacing: '0.08em' }}>
-            DRAGGABLE · DOUBLE-CLICK TO FOCUS · TRACK RECT
-          </span>
-        }
-      />
+      <Preview padded={false}>
+        <Demo />
+      </Preview>
       <Source code={CODE} />
       <Source code={PROPS} lang="ts" />
       <Notes>

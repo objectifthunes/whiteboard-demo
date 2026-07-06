@@ -1,5 +1,6 @@
 import { ExportPage } from '@/components/ExportPage'
-import { FullScreenPreview } from '@/components/Preview'
+import { Preview } from '@/components/Preview'
+import { Demo } from './client'
 import { Source } from '@/components/Source'
 import { Notes } from '@/components/Notes'
 import { findExport } from '@/components/exports'
@@ -15,14 +16,9 @@ const CODE = `import { WhiteboardShell, ThemeToggle } from '@objectifthunes/whit
 export default async function Page() {
   return (
     <ExportPage group={e.group} title={e.name} lede={e.lede}>
-      <FullScreenPreview
-        href="/full/whiteboard/zoom-bar/"
-        illustration={
-          <span style={{ fontFamily: 'var(--docs-mono)', fontSize: 12, letterSpacing: '0.08em' }}>
-            RIGHT EDGE · ZOOM · FIT · RESET · SNAP · EXTRA
-          </span>
-        }
-      />
+      <Preview padded={false}>
+        <Demo />
+      </Preview>
       <Source code={CODE} />
       <Notes>
         <p>

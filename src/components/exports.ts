@@ -1,4 +1,4 @@
-export type Badge = 'FULL-SCREEN' | 'HOOK' | 'UTIL' | 'TYPE'
+export type Badge = 'HOOK' | 'UTIL' | 'TYPE'
 
 export interface ExportEntry {
   slug: string           // url segment, e.g. 'shell'
@@ -43,12 +43,12 @@ export const GROUPS: { id: GroupId; label: string }[] = [
 
 export const EXPORTS: ExportEntry[] = [
   // Whiteboard primitives
-  { slug: 'shell',                name: 'WhiteboardShell',     group: 'whiteboard', href: '/whiteboard/shell/',                lede: 'The pan/zoom canvas viewport. Fixed-position, full-viewport. Mount it once, drop FloatingPanels inside.', badge: 'FULL-SCREEN' },
-  { slug: 'floating-panel',       name: 'FloatingPanel',       group: 'whiteboard', href: '/whiteboard/floating-panel/',       lede: 'A draggable, world-space panel that lives inside WhiteboardShell. Register your tool UIs here.', badge: 'FULL-SCREEN' },
-  { slug: 'create-panel',         name: 'CreatePanel',         group: 'whiteboard', href: '/whiteboard/create-panel/',         lede: 'The "make a new one" card: a dashed panel with one full-width primary Button. Place it beside a board of resource cards.', badge: 'FULL-SCREEN' },
-  { slug: 'section-panel',        name: 'SectionPanel',        group: 'whiteboard', href: '/whiteboard/section-panel/',        lede: 'One draggable board holding a static grid of cards. Gaps and paddings equal the canvas grid unit, so sections span whole plus signs.', badge: 'FULL-SCREEN' },
-  { slug: 'minimap',              name: 'Minimap',             group: 'whiteboard', href: '/whiteboard/minimap/',              lede: 'A live overview of every registered panel + the current viewport. Click / drag to pan, double-click a panel to focus it.', badge: 'FULL-SCREEN' },
-  { slug: 'zoom-bar',             name: 'ZoomBar',             group: 'whiteboard', href: '/whiteboard/zoom-bar/',             lede: 'Fixed-position zoom controls: in/out, fit, reset positions, snap-to-grid. Slot extra actions in via extraActions.', badge: 'FULL-SCREEN' },
+  { slug: 'shell',                name: 'WhiteboardShell',     group: 'whiteboard', href: '/whiteboard/shell/',                lede: 'The pan/zoom canvas viewport. Fixed-position, full-viewport. Mount it once, drop FloatingPanels inside.' },
+  { slug: 'floating-panel',       name: 'FloatingPanel',       group: 'whiteboard', href: '/whiteboard/floating-panel/',       lede: 'A draggable, world-space panel that lives inside WhiteboardShell. Register your tool UIs here.' },
+  { slug: 'create-panel',         name: 'CreatePanel',         group: 'whiteboard', href: '/whiteboard/create-panel/',         lede: 'The "make a new one" card: a dashed panel with one full-width primary Button. Place it beside a board of resource cards.' },
+  { slug: 'section-panel',        name: 'SectionPanel',        group: 'whiteboard', href: '/whiteboard/section-panel/',        lede: 'One draggable board holding a static grid of cards. Gaps and paddings equal the canvas grid unit, so sections span whole plus signs.' },
+  { slug: 'minimap',              name: 'Minimap',             group: 'whiteboard', href: '/whiteboard/minimap/',              lede: 'A live overview of every registered panel + the current viewport. Click / drag to pan, double-click a panel to focus it.' },
+  { slug: 'zoom-bar',             name: 'ZoomBar',             group: 'whiteboard', href: '/whiteboard/zoom-bar/',             lede: 'Fixed-position zoom controls: in/out, fit, reset positions, snap-to-grid. Slot extra actions in via extraActions.' },
   { slug: 'confirm-dialog',       name: 'ConfirmDialog',       group: 'whiteboard', href: '/whiteboard/confirm-dialog/',       lede: 'Portaled, accessible confirmation modal. Closes on Escape, backdrop click, or Cancel.' },
   { slug: 'panel-error-boundary', name: 'PanelErrorBoundary',  group: 'whiteboard', href: '/whiteboard/panel-error-boundary/', lede: 'Class-based error boundary with a Retry button. Drop it around panel bodies that load unstable widgets.' },
 
@@ -59,7 +59,7 @@ export const EXPORTS: ExportEntry[] = [
   { slug: 'helpers',               name: 'Helpers',             group: 'store', href: '/store/helpers/',               lede: 'usePanelRect, belowPanel, snapToWhiteboardGrid, WHITEBOARD_GRID, and cn.', badge: 'UTIL' },
 
   // Whiteboard Dashboard
-  { slug: 'dashboard-shell',  name: 'DashboardShell',        group: 'dashboard', href: '/dashboard/dashboard-shell/',  lede: 'Sidebar column + main column with top bar and centred content. The classic admin layout; collapses to one column under 880px.', badge: 'FULL-SCREEN' },
+  { slug: 'dashboard-shell',  name: 'DashboardShell',        group: 'dashboard', href: '/dashboard/dashboard-shell/',  lede: 'Sidebar column + main column with top bar and centred content. The classic admin layout; collapses to one column under 880px.' },
   { slug: 'sidebar',          name: 'Sidebar',               group: 'dashboard', href: '/dashboard/sidebar/',          lede: 'Grouped dashboard navigation with brand, badge, and footer slots. Framework-agnostic — swap the plain <a> via renderLink.' },
   { slug: 'top-bar',          name: 'TopBar',                group: 'dashboard', href: '/dashboard/top-bar/',          lede: 'Sticky dashboard header: mono breadcrumb left, quiet TopBarLink actions right. Content scrolls under its blurred backdrop.' },
   { slug: 'page',             name: 'Page & PageHeader',     group: 'dashboard', href: '/dashboard/page/',             lede: 'Page, PageHeader, PageBlock, and Eyebrow — the vertical rhythm of every dashboard page.' },
@@ -75,7 +75,7 @@ export const EXPORTS: ExportEntry[] = [
   { slug: 'load-more-button', name: 'LoadMoreButton',        group: 'dashboard', href: '/dashboard/load-more-button/', lede: 'Cursor-pagination footer. Renders nothing without a next page or while loading, so drop it in unconditionally.' },
   { slug: 'button-link',      name: 'ButtonLink',            group: 'dashboard', href: '/dashboard/button-link/',      lede: 'A link styled exactly like Button — navigation that looks like an action, without nesting a button inside an anchor.' },
   { slug: 'note-bar',         name: 'NoteBar',               group: 'dashboard', href: '/dashboard/note-bar/',         lede: 'The single global notification surface: an Alert with a dismiss button. Renders nothing without children.' },
-  { slug: 'sticky-bar',       name: 'StickyBar',             group: 'dashboard', href: '/dashboard/sticky-bar/',       lede: 'Viewport-pinned bottom bar for batch summaries and bulk actions. Offsets past the sidebar; full width under 880px.', badge: 'FULL-SCREEN' },
+  { slug: 'sticky-bar',       name: 'StickyBar',             group: 'dashboard', href: '/dashboard/sticky-bar/',       lede: 'Viewport-pinned bottom bar for batch summaries and bulk actions. Offsets past the sidebar; full width under 880px.' },
 
   // Forms (0.4 additions live alongside the originals below)
   { slug: 'checkbox',     name: 'Checkbox & Switch', group: 'forms', href: '/forms/checkbox/',     lede: 'Labeled boolean rows. The input pins its own size, so host globals can never stretch it across the row.' },

@@ -1,5 +1,6 @@
 import { ExportPage } from '@/components/ExportPage'
-import { FullScreenPreview } from '@/components/Preview'
+import { Preview } from '@/components/Preview'
+import { Demo } from './client'
 import { Source } from '@/components/Source'
 import { Notes } from '@/components/Notes'
 import { findExport } from '@/components/exports'
@@ -18,14 +19,9 @@ const CODE = `import { WhiteboardShell } from '@objectifthunes/whiteboard'
 export default async function Page() {
   return (
     <ExportPage group={e.group} title={e.name} lede={e.lede}>
-      <FullScreenPreview
-        href="/full/whiteboard/minimap/"
-        illustration={
-          <span style={{ fontFamily: 'var(--docs-mono)', fontSize: 12, letterSpacing: '0.08em' }}>
-            BOTTOM-RIGHT · CLICK TO PAN · DBL-CLICK TO FOCUS
-          </span>
-        }
-      />
+      <Preview padded={false}>
+        <Demo />
+      </Preview>
       <Source code={CODE} />
       <Notes>
         <p>

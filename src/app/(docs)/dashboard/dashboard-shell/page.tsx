@@ -1,5 +1,5 @@
 import { ExportPage } from '@/components/ExportPage'
-import { Preview, FullScreenPreview } from '@/components/Preview'
+import { Preview } from '@/components/Preview'
 import { Source } from '@/components/Source'
 import { Notes } from '@/components/Notes'
 import { findExport } from '@/components/exports'
@@ -24,14 +24,6 @@ export default function AdminLayout({ children }) {
 export default async function Page() {
   return (
     <ExportPage group={e.group} title={e.name} lede={e.lede}>
-      <FullScreenPreview
-        href="/full/dashboard/shell/"
-        illustration={
-          <span style={{ fontFamily: 'var(--docs-mono)', fontSize: 12, letterSpacing: '0.08em' }}>
-            SIDEBAR · TOPBAR · STAT CARDS · LIST · STICKY BATCH BAR
-          </span>
-        }
-      />
       <Preview><Demo /></Preview>
       <Source code={CODE} />
       <Notes>

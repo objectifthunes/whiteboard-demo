@@ -1,5 +1,6 @@
 import { ExportPage } from '@/components/ExportPage'
-import { FullScreenPreview } from '@/components/Preview'
+import { Preview } from '@/components/Preview'
+import { Demo } from './client'
 import { Source } from '@/components/Source'
 import { Notes } from '@/components/Notes'
 import { findExport } from '@/components/exports'
@@ -33,14 +34,9 @@ sectionPanelWidth(cols, cardW)
 export default async function Page() {
   return (
     <ExportPage group={e.group} title={e.name} lede={e.lede}>
-      <FullScreenPreview
-        href="/full/whiteboard/section-panel/"
-        illustration={
-          <span style={{ fontFamily: 'var(--docs-mono)', fontSize: 12, letterSpacing: '0.08em' }}>
-            DRAG THE BOARD · CARDS STAY PUT · GRID-METRIC
-          </span>
-        }
-      />
+      <Preview padded={false}>
+        <Demo />
+      </Preview>
       <Source code={CODE} />
       <Source code={PROPS} lang="ts" />
       <Notes>
